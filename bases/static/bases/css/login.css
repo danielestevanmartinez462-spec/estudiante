@@ -1,0 +1,441 @@
+
+/* =========================================
+   ESTILOS GENERALES
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background:
+        radial-gradient(circle at 15% 20%, #075b50, transparent 35%),
+        radial-gradient(circle at 85% 80%, #064b43, transparent 35%),
+        #031b20;
+    color: white;
+}
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.login-container {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 590px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    border: 1px solid #00e6c3;
+    border-radius: 20px;
+    background: #062b2d;
+    box-shadow:
+        0 0 15px rgba(0, 230, 195, 0.5),
+        0 0 45px rgba(0, 180, 150, 0.25);
+}
+
+/* =========================================
+   PANEL IZQUIERDO
+========================================= */
+
+.presentacion {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 55px 45px;
+    background:
+        linear-gradient(145deg, rgba(0, 65, 58, 0.85), rgba(0, 120, 100, 0.45)),
+        linear-gradient(135deg, #032b2c, #006b60, #022a2b);
+}
+
+/* CÍRCULOS DECORATIVOS */
+
+.presentacion::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    right: -150px;
+    bottom: -100px;
+    border: 2px solid rgba(0, 238, 195, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 35px rgba(0, 180, 150, 0.2);
+}
+
+.presentacion::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    right: -100px;
+    bottom: -55px;
+    border: 1px solid rgba(0, 238, 195, 0.25);
+    border-radius: 50%;
+}
+
+/* TÍTULO Y DESCRIPCIÓN */
+
+.presentacion-contenido {
+    position: relative;
+    z-index: 2;
+    margin-top: 65px;
+}
+
+.presentacion h1 {
+    font-size: 39px;
+    line-height: 1.3;
+    font-weight: 900;
+    font-style: italic;
+    text-shadow: 0 0 15px rgba(0, 220, 180, 0.35);
+}
+
+.presentacion h1 span {
+    display: block;
+    color: #00e8c3;
+    font-size: 47px;
+    text-shadow: 0 0 18px rgba(0, 232, 195, 0.5);
+}
+
+.presentacion p {
+    max-width: 380px;
+    margin-top: 22px;
+    color: #d2f5ec;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* FRASE INFERIOR */
+
+.frase {
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
+    border-left: 3px solid #00e8c3;
+    color: white;
+    font-size: 21px;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 1.5;
+    text-shadow: 0 0 12px rgba(0, 230, 195, 0.4);
+}
+
+/* =========================================
+   PANEL DERECHO
+========================================= */
+
+.login-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 55px 40px;
+    background:
+        radial-gradient(circle at top, #10534b, transparent 45%),
+        linear-gradient(145deg, #062c2e, #031a20);
+}
+
+/* ICONO DEL CANDADO */
+
+.icono-candado {
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00e8c3;
+    border-radius: 50%;
+    background: #075047;
+    font-size: 29px;
+    box-shadow:
+        0 0 12px #00cda9,
+        0 0 30px rgba(0, 220, 180, 0.5);
+}
+
+/* TÍTULOS */
+
+.login-panel h2 {
+    margin-top: 35px;
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    text-shadow: 0 0 12px rgba(0, 220, 180, 0.5);
+}
+
+.subtitulo {
+    margin: 10px 0 27px;
+    color: #c4e9df;
+    text-align: center;
+    font-size: 13px;
+}
+
+/* =========================================
+   FORMULARIO
+========================================= */
+
+.login-panel form {
+    width: 100%;
+    max-width: 460px;
+}
+
+/* =========================================
+   TARJETAS DE ROLES
+========================================= */
+
+.roles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.rol {
+    cursor: pointer;
+}
+
+.rol input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rol-contenido {
+    min-height: 115px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 5px;
+    border: 1px solid #24796c;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #105047, #07352f);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.rol-icono {
+    font-size: 30px;
+    filter: drop-shadow(0 0 8px currentColor);
+}
+
+.rol strong {
+    color: white;
+    font-size: 12px;
+}
+
+.rol small {
+    color: #c2e6dc;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* COLORES DE LOS ROLES */
+
+.administrador .rol-icono {
+    color: #00e8c3;
+}
+
+.profesor .rol-icono {
+    color: #7ce8b5;
+}
+
+.alumno .rol-icono {
+    color: #b5e88b;
+}
+
+.administrador .rol-contenido {
+    border-bottom: 3px solid #00e8c3;
+}
+
+.profesor .rol-contenido {
+    border-bottom: 3px solid #53dca9;
+}
+
+.alumno .rol-contenido {
+    border-bottom: 3px solid #b5e88b;
+}
+
+/* EFECTO AL SELECCIONAR */
+
+.rol:hover .rol-contenido {
+    transform: translateY(-4px);
+    border-color: #00e8c3;
+}
+
+.rol input:checked + .rol-contenido {
+    background: linear-gradient(145deg, #146b5b, #0b4039);
+    border-color: #00e8c3;
+    box-shadow:
+        0 0 12px rgba(0, 230, 195, 0.5),
+        inset 0 0 12px rgba(0, 220, 180, 0.15);
+    transform: translateY(-3px);
+}
+
+.rol input:focus-visible + .rol-contenido {
+    outline: 2px solid white;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   CAMPOS DE USUARIO Y CONTRASEÑA
+========================================= */
+
+.campo {
+    height: 49px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+    border: 1px solid #168f7b;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #104b43, #092e2d);
+    box-shadow: inset 0 0 10px rgba(0, 220, 180, 0.10);
+    transition: 0.3s;
+}
+
+.campo:focus-within {
+    border-color: #00e8c3;
+    box-shadow: 0 0 13px rgba(0, 230, 195, 0.4);
+}
+
+.campo span {
+    color: #d4fff4;
+    font-size: 19px;
+}
+
+.campo input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.campo input::placeholder {
+    color: #a9d9ca;
+}
+
+/* =========================================
+   BOTÓN INGRESAR
+========================================= */
+
+.boton-ingresar {
+    width: 100%;
+    height: 49px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(100deg, #00e5b5, #00a98d);
+    color: #032d28;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 0 17px rgba(0, 220, 175, 0.4);
+    transition: 0.3s;
+}
+
+.boton-ingresar:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(0, 230, 190, 0.7);
+}
+
+/* =========================================
+   MENSAJES DE ERROR
+========================================= */
+
+.error {
+    width: 100%;
+    max-width: 460px;
+    margin-bottom: 17px;
+    padding: 12px;
+    border: 1px solid #ff526e;
+    border-radius: 9px;
+    background: rgba(255, 50, 80, 0.12);
+    color: #ff9cae;
+    font-size: 12px;
+}
+
+/* =========================================
+   RESPONSIVE - CELULARES
+========================================= */
+
+@media (max-width: 850px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .login-container {
+        max-width: 500px;
+        grid-template-columns: 1fr;
+    }
+
+    .presentacion {
+        min-height: 280px;
+        padding: 35px;
+    }
+
+    .presentacion-contenido {
+        margin-top: 15px;
+    }
+
+    .presentacion h1 {
+        font-size: 30px;
+    }
+
+    .presentacion h1 span {
+        font-size: 37px;
+    }
+
+    .frase {
+        margin-top: 35px;
+        font-size: 18px;
+    }
+
+    .login-panel {
+        padding: 55px 25px 35px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .login-panel {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .rol strong {
+        font-size: 10px;
+    }
+
+    .rol small {
+        font-size: 8px;
+    }
+
+    .roles {
+        gap: 6px;
+    }
+}
